@@ -1,5 +1,18 @@
 package com.alexta.apps.android.weather.application.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.alexta.apps.android.weather.databinding.ActivityApplicationBinding
+import com.alexta.apps.android.weather.shared.framework.activities.ViewBindingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class ApplicationActivity : AppCompatActivity()
+@AndroidEntryPoint
+class ApplicationActivity : ViewBindingActivity<ActivityApplicationBinding>() {
+
+    override var viewBinding: ActivityApplicationBinding? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        viewBinding = ActivityApplicationBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
+    }
+
+}
