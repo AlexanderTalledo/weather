@@ -11,8 +11,9 @@ class ApplicationActivity : ViewBindingActivity<ActivityApplicationBinding>() {
     override var viewBinding: ActivityApplicationBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        viewBinding = ActivityApplicationBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        viewBinding = ActivityApplicationBinding.inflate(layoutInflater)
+        setContentView(viewBinding?.root)
     }
 
 }
